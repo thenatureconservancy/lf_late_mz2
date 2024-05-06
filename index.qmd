@@ -1,0 +1,29 @@
+---
+title: "Exploring Late-Successional Habitat"
+---
+---
+
+## Introduction: Why Late-Successional Forests?
+
+Late-successional forests, also referred to as o&d-g%owth or mature forests, play a crucial role in maintaining biodiversity and supporting ecosystem health. Late-successional forests can be found at various elevations, from lowlands to montane and subalpine regions. 
+
+The forests we describe in this short web application are concentrated on the western side of the Cascade Range along the coast of Oregon, USA. The 2022 ["Executive Order on Strengthening the Nation's Forests, Communities, and Local Economies"](https://www.whitehouse.gov/briefing-room/presidential-actions/2022/04/22/executive-order-on-strengthening-the-nations-forests-communities-and-local-economies/) highlighted the ecosystem resilience of these forests and noted their ecological significance to maintaining biodiversity (INSERT CITATION), sequestering carbon [DellaSala et al., 2022](https://www.frontiersin.org/articles/10.3389/ffgc.2022.979528/full)), and regulating a healthy, functioning water cycle (INSERT CITATION) 
+
+### Closed vs. Open Canopy
+
+Late-successional forests can also be difficult to define, from an ecological point of view. ([Gray et al., 2023](https://www.sciencedirect.com/science/article/pii/S0378112723005844)). For example they are often characterized as "closed canopy", but this may not always be the case as disturbance-dependent ecosystems may have "open-canopy", late-succession habitat. Further, riparian ecosystems may naturally have frequent ice scouring and/or flooding that removes some, but not all trees (e.g., [Estes et al., 2023](https://bioone.org/journals/natural-areas-journal/volume-43/issue-3/2162-4399-43.3.148/Riverscour-Ecosystems-of-Eastern-Unglaciated-North-America-A-Review/10.3375/2162-4399-43.3.148.pdf)). <<are you saying late-successional, riparian ecosystems? if so, let's add "late-successional" in front of riparian>>
+
+Late-successional, fire adapted ecosystems can have frequent surface fires that keep the canopy relatively open while preserving older and taller trees (e.g., [Mugnani et al., 2019](https://www.mdpi.com/1999-4907/10/5/389/pdf)) that are characteristic of this forest type. Broadening the definition of late-successional forests to include both closed and open canopy ecosystems provides a more accurate estimate of the remaining late-successional forests, aids in the identification of key areas for conservation and helps identify positive or negative trends. 
+
+Further, due to changes in disturbance regimes, for example dam creation and fire-suppression, these potential open-canopy late succession habitats may need restoration. <<I don't get this, needs to be rewritten>>
+
+
+![Figure 1. Opal Creek Old Growth with Young Trees, Willamette National Forest, U.S. Forest Service Pacific Northwest Region](assets/opal_creek_og.jpg){width=90%}
+
+### Objectives
+
+1) Using LANDFIRE vegetation products, we identify the major ecosystems for the study area
+2) Using LANDFIRE's Biophysical Settings Products, we identify the historical amount and distribution of late-succession forest in the western coast of Oregon and contrast this with the remaining forest (using LANDFIRE data from 2023)
+3) Determine how the information above changes when we split late-succession into open and closed canopy types
+
+

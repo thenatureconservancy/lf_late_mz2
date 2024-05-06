@@ -1,0 +1,257 @@
+---
+title: "Results"
+---
+
+# Results
+
+## Historic Ecosystems
+
+This chart represents the historical ecosystems of our area of interest, split out by estimated acres of the various succession classes, pre-European Settlement. On the y axis are names of LANDFIRE’s BpSs and the x axis represent the number of acres. The colors represent the age classes; the purple and orange areas represent late-succession ecosystems. 
+Note: Late1 and Late2 don’t necessarily mean open/closed canopy.
+
+We mapped 28 BpSs within the area of interest. We excluded BpSs with footprints of less than 10,000 acres. Roughly 60% of the area is estimated to have been historically classified as late-successional habitat and can be considered reference conditions as determined by the local experts that created the BpS models for the area.
+
+### Major Biophysical Settings with Estimated Reference 
+#### Separated by Succession Classes
+```{r stacked bps, message=FALSE, warning=FALSE, fig.width=9, fig.height=16}
+
+library(tidyverse)
+library(scales)
+
+
+raw_data <- read.csv("data/final_df.csv") %>%
+  filter(!is.na(age_category)) %>%
+  filter(bps_acres > 10000)
+
+
+
+# get labels ordered properly
+
+raw_data$age_category <- factor(raw_data$age_category, 
+                                    levels = c(
+                                      "Early1",
+                                      "Mid1",
+                                      "Mid2",
+                                      "Late1",
+                                      "Late2"
+                                    ))
+
+raw_data$age_category <- factor(raw_data$age_category, levels = rev(levels(raw_data$age_category)))
+
+
+
+plot_acres <-
+  ggplot(raw_data, aes(fill = age_category, y = ref_scls_acres, x = reorder(bps_name, -bps_acres))) +
+  geom_bar(position = "stack", stat = "identity") +
+  coord_flip() +
+  labs(
+    title = "",
+    subtitle = "",
+    caption = "Data from landfire.gov. BpSs with small footprint removed for clarity (> 10k acres)",
+    x = "",
+    y = "Acres",
+    fill = "Succession Class") +
+  scale_x_discrete(limits = rev, labels = wrap_format(20)) +
+  scale_y_continuous(label = comma, n.breaks = 4) + 
+  theme_bw(base_size = 12) + 
+  scale_fill_manual(values = c("#f5922f", # orange
+                               "#532a66", # purple
+                               "#827c75", # grey
+                               "#f5eb2f", # yellow
+                               "#74a36f" # green-natural veg
+  )) +
+  theme(plot.caption = element_text(hjust = 0, face = "italic"), #Default is hjust=1
+        plot.title.position = "plot", #NEW parameter. Apply for subtitle too.
+        plot.caption.position =  "plot") +
+  theme(legend.position = c(0.8, 0.2)) + 
+  theme(plot.margin = unit(c(0.2, 0.75, 0.2, 0.2),
+                           "inches"))
+
+plot_acres
+
+
+```
+
+<<I MIGHT RECOMMEND PARING DOWN THIS BPS LIST TO THE TOP 8? 10?>>
+
+Figure 6. Chart representing historical ecosystems of the area of interest, split out by estimated acres of the various succession classes pre-European Settlement.
+
+## Estimated Percentages of **Historic Late-Succesional**
+
+This map represents the historical percentages of late-successional forest by ecosystem. Most of the area fell within 76-100% late-successional class grouping which is represented by the darker green areas. <<IF POSSIBLE IT WOULD BE GREAT TO MAKE ALL THE MAPS LOOK SIMILAR, SEE COMMENTS ON MAPS FROM THE METHODS TAB>>
+
+
+![Figure 7. Map of historic percentages of late successional forest. We used quantiles for the legend breaks. Percent late-successional forest was joined to the BpS data as an attribute in GIS ](assets/historicOldGrowth.jpg){width=80%}
+
+
+## Estimated Percentage of **Current Late-Successional**
+
+This map represents the estimated current percentages of late-successional forest by ecosystem. Currently ~15% of the area is mapped as late succession which is represented by the darker green areas. In the PNW we sometimes underestimate succession class height, and so the data may have been undermapped.
+
+![Figure 8. Map of current percentages of late successional forest. For this map, we used quantiles for the legend breaks. Combination of BpS and SClass attributes. (SClass).](assets/currentOldGrowth.jpg){width=80%}
+
+## Estimated **Current Late-Successional Percent Change**
+
+This map represents the percent change of late-successional forest by ecosystem. Darker green areas indicate an increase in the amount of LS forest, while brown areas indicate a loss. Percent of late-successional forest ranged from an 81% loss to a 75% gain. Most areas saw a loss of 60% or more. 
+
+Some areas in the southern portion of the study area saw a net gain in late-successional forest. This is perhaps due to a history of fire suppression in the area, or an increase in different vegetation types. Land ownership includes land managed by USFS, BLM, and private landowners.
+
+![Figure 9. Map of percent change in late successional forest. For this map, we used jenks natural breaks for the legend breaks.](assets/difference.jpg){width=80%}
+
+
+## Estimated **Current Late-Successional Percent Change**
+
+This chart shows changes in amounts of late-successional habitat by ecosystem, from "modeled historical" to "mapped with 2020 data". The y axis are the top LANDFIRE BpSs and the x axis displays the percent change from historical to present-day <<WOULDN'T SAY PRESENT DAY BECAUSE TIME N ALL...OR 2020??>>. The arrows/ecosystems are arranged in descending order from most prevalent to least (at the bottom). Yellow arrows indicate a loss, while the green ones represent a gain.
+
+Almost all ecosystems have experienced substantial loss of late successional classes; 3 ecosystems experienced a gain in late successional classes. These represent percentages of the whole ecosystem.
+
+```{r late-succession change, message=FALSE, warning=FALSE, fig.width=9, fig.height=18}
+
+raw_data <- read.csv("data/final_df.csv")
+
+
+## filter, group and add helper columns
+
+old_classes <- c("Late1", "Late2")
+
+old_growth_loss <- raw_data %>%
+  filter(age_category %in% old_classes) %>%
+  group_by(bps_name) %>%
+  summarize(ref_percent = sum(ref_percent, na.rm = TRUE),
+            cur_percent = sum(cur_percent, na.rm = TRUE),
+            bps_acres = max(bps_acres)) %>%
+  mutate(change = cur_percent - ref_percent,
+       sign_change = (change >0)) 
+
+
+# try arrow plot
+
+
+arrow_plot <- old_growth_loss |> 
+  ggplot(aes(
+      x = ref_percent, xend = cur_percent, 
+      y = reorder(bps_name, bps_acres), yend = bps_name,
+      color = sign_change)) +
+  geom_segment(
+    arrow = arrow(angle = 30, length = unit(0.5, 'cm')),
+    size = 2) +
+  labs(
+    x = 'Percent Change', 
+    y = element_blank(),
+    title = 'Changes in Late Succession Classes Historical to ~2020',
+    subtitle = 'BpSs in descending order by total extent'
+  ) +
+  scale_color_manual(
+    values = c("#fcba03", "#10692c")) +
+  theme_bw(base_size = 12) + 
+  theme(legend.position = "none") +
+  scale_y_discrete(limits = rev, labels = wrap_format(20)) 
+
+
+arrow_plot
+
+```
+
+
+
+## Estimated Percentage of **Historic Late-Successional (open-canopy)**
+
+This map represents the percent of historic, open-canopy, late-successional forests. Historic, open-canopy ecosystems ranged from 5-68% and darker purple areas indicate higher amounts of open canopy forest. 
+
+![Figure 11. Map of percent of historic late successional ecosystems that are classified as open canopy. We used jenks natural breaks for the legend breaks.](assets/historicOldGrowth_open.png){width=80%}
+
+## Estimated Percentage of **Historic Late-Successional (closed-canopy)**
+
+This map represents the percent of historic, closed-canopy, late-successional forest. <<SHOULD SAY SOMETHING LIKE 'MOST OF THE FOREST FELL WITHIN THE 42-55% RANGE' OR SOMETHING LIKE THAT>>Darker red areas indicate higher amounts of closed canopy forest. Coastal areas get more rain and the eastern spots are drier due to rain shadow. 
+
+![Figure 12. Map of percent of historic late successional ecosystems that are classified as closed canopy. We used jenks natural breaks for the legend breaks.](assets/historicOldGrowth_closed.png){width=80%}
+
+## Estimated Percentage of **Current Late-Successional (open-canopy)**
+
+This map represents the percent of current, open canopy, late-successional forest. Darker purple areas indicate higher amounts of open canopy forest. Late-successional, open-canopy forest ranged from 1-28% and are indicated by darker purple areas on the map. Note: there is very little open-canopy ecosystem remaining.
+
+![Figure 13. Map of percent of current late successional ecosystems that are classified as open canopy. We used jenks natural breaks for the legend breaks.](assets/currentOldGrowth_open.png){width=80%}
+
+## Estimated Percentage of **Current Late-Successional (closed-canopy)**
+
+This map represents the percent of current, closed-canopy, late-successional forests. Darker red areas indicate higher amounts of closed-canopy forest. <<SHOULD THE LEGEND BREAKS BE DOUBLE CHECKED? I.E. LAST BREAK IS 32-84%?>> 
+
+![Figure 14. Map of percent of current late successional ecosystems that are classified as closed canopy. We used jenks natural breaks for the legend breaks.](assets/currentOldGrowth_closed.png){width=80%}
+
+
+## what is this title? I accidentally deleted it)
+
+This chart shows change in amounts of late-successional open and closed canopy habitat by ecosystem, from modeled historical to mapped using data from 2020. The y axis are the top LANDFIRE BpSs and the x axis displays the percent change from historical to present-day <<WOULDN'T SAY PRESENT DAY BECAUSE TIME N ALL...OR 2020??>>. The arrows/ecosystems are arranged in descending order from most prevalent to least (at the bottom). Yellow arrows indicate a loss, while the green ones represent a gain.
+
+### Example interpretations:
+1) North Pacific Maritime Mesic-Wet Douglas-fir Western Hemlock Forest experienced a ~73% decrease in closed-canopy and a ~5% decrease in open-canopy forest type.
+2) Mediterranean California Dry-Mesic Mixed Conifer Forest and Woodland experienced a ~23% increase in closed-canopy and a ~35% decrease in open-canopy forest type.
+
+```{r late-succession change, open and closed, message=FALSE, warning=FALSE, fig.width=9, fig.height=18}
+
+## old growth change split out by open/closed
+
+
+library(tidyverse)
+
+## read in data
+
+raw_data <- read.csv("data/final_df.csv")
+
+
+## filter, group and add helper columns
+
+
+old_classes <- c("Late1", "Late2")
+
+old_growth_chng_canopy <- raw_data %>%
+  filter(age_category %in% old_classes) %>%
+  filter(canopy_category != 'ALL') %>%
+  group_by(bps_name, canopy_category) %>%
+  summarize(ref_percent = sum(ref_percent, na.rm = TRUE),
+            cur_percent = sum(cur_percent, na.rm = TRUE),
+            bps_acres = max(bps_acres)) %>%
+  mutate(change = cur_percent - ref_percent,
+         sign_change = (change > 0)) 
+
+
+## try chart with facets
+
+facet_names <- c(
+  "CLS" = "Closed Canopy",
+  "OPN" = "Open Canopy"
+)
+
+canopy_arrow_plot <- old_growth_chng_canopy %>%
+  ggplot(aes(
+    x = ref_percent, xend = cur_percent, 
+    y = reorder(bps_name, bps_acres), yend = bps_name,
+    color = sign_change)) +
+  geom_segment(
+    arrow = arrow(angle = 30, length = unit(0.5, 'cm')),
+    size = 2) +
+  labs(
+    x = 'Percent Change', 
+    y = element_blank(),
+    title = 'Changes in Late Succession Classes Historical to ~2020',
+    subtitle = 'Arrows in descending order by total extent of ecosystem'
+  ) +
+  scale_color_manual(
+    values = c("#fcba03", "#10692c")) +
+  theme_bw(base_size = 12) + 
+  theme(legend.position = "none") +
+  facet_wrap(~ canopy_category, 
+             ncol = 2,
+             labeller = as_labeller(facet_names))+
+  scale_y_discrete(limits = rev, labels = wrap_format(20))
+
+canopy_arrow_plot
+
+
+```
+
+
+
+
+Figure 15. Chart showing change in amounts of late-successional open and closed canopy habitat by ecosystem, from modeled historical to mapped 2020
+

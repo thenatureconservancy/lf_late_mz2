@@ -1,0 +1,31 @@
+---
+title: "Discussion"
+---
+
+
+## Caveats
+
+1) This analysis was done to explore broad trends over time and should be used as a launch point for localized, in-depth analyses
+2) Mapping/modeling techniques of pre-settlement are different from the satellite maps of today <<THIS LEAVES ME WONDERING WHAT YOU MEAN...NEED TO SAY MORE HERE - TO LEARN MORE ABOUT MAPPING MODELING TECHNIQUES OF PRE-SETTLEMENT, CLICK HERE - DO WE EVEN KNOW WHAT PRE-SETTLEMENT MODELING MEANS?>>
+3) Differentiation between open/closed canopy classes were determined in workshops led by local experts. <<DOCUMENTATION ON THEIR CRITERIA CAN BE FOUND HERE>>
+
+## Discussion
+
+### Summary and patterns
+
+Overall, late-successional forests have declined from pre-European conditions to present-day. Our preliminary analysis suggests that on average, late-successional forests have declined 60%, with nearly all ecosystems losing open-canopy, and coastal ecosystems losing closed-canopy, late successional. However, some areas have experienced a gain in late-successional forests, perhaps due to fire suppression.
+
+### Our contributions
+
+Our results demonstrate the importance of considering open canopy LS, especially in fire adapted ecosystems. If we only consider ‘closed-canopy’ late succession habitat, we may underestimate those areas. Consideration of both canopy types could lead to a fuller understanding of the ecosystems at hand, as well as increased forest resiliency and stronger and more inclusive management strategies moving forward.
+
+### Future directions
+
+
+
+## Acknowledgements
+
+- LANDFIRE Team
+- The Conservation Data Lab (https://conservationdatalab.org/)
+
+
