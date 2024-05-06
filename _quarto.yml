@@ -1,19 +1,31 @@
 project:
   type: website
+  output-dir: docs
+  preview: 
+    watch-inputs: false
 
 website:
-  title: "quarto_blank"
+  title: "LANDFIRE Late Succession Assessment Demo"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: methods.qmd
+        text: Methods
+      - href: results.qmd
+        text: Results
+      - href: discussion.qmd
+        text: Discussion
+      - href: about.qmd
+        text: About
 
 format:
   html:
+    page-layout: full
     theme: cosmo
     css: styles.css
     toc: true
+
 
 
 

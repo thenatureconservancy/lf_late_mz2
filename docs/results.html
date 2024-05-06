@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>LANDFIRE Late Succession Assessment Demo - Results</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">LANDFIRE Late Succession Assessment Demo</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./methods.html" rel="" target="">
+ <span class="menu-text">Methods</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./results.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Results</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./discussion.html" rel="" target="">
+ <span class="menu-text">Discussion</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#results" id="toc-results" class="nav-link active" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#historic-ecosystems" id="toc-historic-ecosystems" class="nav-link" data-scroll-target="#historic-ecosystems">Historic Ecosystems</a>
+  <ul class="collapse">
+  <li><a href="#major-biophysical-settings-with-estimated-reference" id="toc-major-biophysical-settings-with-estimated-reference" class="nav-link" data-scroll-target="#major-biophysical-settings-with-estimated-reference">Major Biophysical Settings with Estimated Reference</a></li>
+  </ul></li>
+  <li><a href="#estimated-percentages-of-historic-late-succesional" id="toc-estimated-percentages-of-historic-late-succesional" class="nav-link" data-scroll-target="#estimated-percentages-of-historic-late-succesional">Estimated Percentages of <strong>Historic Late-Succesional</strong></a></li>
+  <li><a href="#estimated-percentage-of-current-late-successional" id="toc-estimated-percentage-of-current-late-successional" class="nav-link" data-scroll-target="#estimated-percentage-of-current-late-successional">Estimated Percentage of <strong>Current Late-Successional</strong></a></li>
+  <li><a href="#estimated-current-late-successional-percent-change" id="toc-estimated-current-late-successional-percent-change" class="nav-link" data-scroll-target="#estimated-current-late-successional-percent-change">Estimated <strong>Current Late-Successional Percent Change</strong></a></li>
+  <li><a href="#estimated-current-late-successional-percent-change-1" id="toc-estimated-current-late-successional-percent-change-1" class="nav-link" data-scroll-target="#estimated-current-late-successional-percent-change-1">Estimated <strong>Current Late-Successional Percent Change</strong></a></li>
+  <li><a href="#estimated-percentage-of-historic-late-successional-open-canopy" id="toc-estimated-percentage-of-historic-late-successional-open-canopy" class="nav-link" data-scroll-target="#estimated-percentage-of-historic-late-successional-open-canopy">Estimated Percentage of <strong>Historic Late-Successional (open-canopy)</strong></a></li>
+  <li><a href="#estimated-percentage-of-historic-late-successional-closed-canopy" id="toc-estimated-percentage-of-historic-late-successional-closed-canopy" class="nav-link" data-scroll-target="#estimated-percentage-of-historic-late-successional-closed-canopy">Estimated Percentage of <strong>Historic Late-Successional (closed-canopy)</strong></a></li>
+  <li><a href="#estimated-percentage-of-current-late-successional-open-canopy" id="toc-estimated-percentage-of-current-late-successional-open-canopy" class="nav-link" data-scroll-target="#estimated-percentage-of-current-late-successional-open-canopy">Estimated Percentage of <strong>Current Late-Successional (open-canopy)</strong></a></li>
+  <li><a href="#estimated-percentage-of-current-late-successional-closed-canopy" id="toc-estimated-percentage-of-current-late-successional-closed-canopy" class="nav-link" data-scroll-target="#estimated-percentage-of-current-late-successional-closed-canopy">Estimated Percentage of <strong>Current Late-Successional (closed-canopy)</strong></a></li>
+  <li><a href="#what-is-this-title-i-accidentally-deleted-it" id="toc-what-is-this-title-i-accidentally-deleted-it" class="nav-link" data-scroll-target="#what-is-this-title-i-accidentally-deleted-it">what is this title? I accidentally deleted it)</a>
+  <ul class="collapse">
+  <li><a href="#example-interpretations" id="toc-example-interpretations" class="nav-link" data-scroll-target="#example-interpretations">Example interpretations:</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Results</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="results" class="level1">
+<h1>Results</h1>
+<section id="historic-ecosystems" class="level2">
+<h2 class="anchored" data-anchor-id="historic-ecosystems">Historic Ecosystems</h2>
+<p>This chart represents the historical ecosystems of our area of interest, split out by estimated acres of the various succession classes, pre-European Settlement. On the y axis are names of LANDFIRE’s BpSs and the x axis represent the number of acres. The colors represent the age classes; the purple and orange areas represent late-succession ecosystems. Note: Late1 and Late2 don’t necessarily mean open/closed canopy.</p>
+<p>We mapped 28 BpSs within the area of interest. We excluded BpSs with footprints of less than 10,000 acres. Roughly 60% of the area is estimated to have been historically classified as late-successional habitat and can be considered reference conditions as determined by the local experts that created the BpS models for the area.</p>
+<section id="major-biophysical-settings-with-estimated-reference" class="level3">
+<h3 class="anchored" data-anchor-id="major-biophysical-settings-with-estimated-reference">Major Biophysical Settings with Estimated Reference</h3>
+<section id="separated-by-succession-classes" class="level4">
+<h4 class="anchored" data-anchor-id="separated-by-succession-classes">Separated by Succession Classes</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/final_df.csv"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(age_category)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(bps_acres <span class="sc">&gt;</span> <span class="dv">10000</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># get labels ordered properly</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>raw_data<span class="sc">$</span>age_category <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw_data<span class="sc">$</span>age_category, </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">levels =</span> <span class="fu">c</span>(</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Early1"</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Mid1"</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Mid2"</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Late1"</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Late2"</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>                                    ))</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>raw_data<span class="sc">$</span>age_category <span class="ot">&lt;-</span> <span class="fu">factor</span>(raw_data<span class="sc">$</span>age_category, <span class="at">levels =</span> <span class="fu">rev</span>(<span class="fu">levels</span>(raw_data<span class="sc">$</span>age_category)))</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>plot_acres <span class="ot">&lt;-</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(raw_data, <span class="fu">aes</span>(<span class="at">fill =</span> age_category, <span class="at">y =</span> ref_scls_acres, <span class="at">x =</span> <span class="fu">reorder</span>(bps_name, <span class="sc">-</span>bps_acres))) <span class="sc">+</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"stack"</span>, <span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">""</span>,</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">""</span>,</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Data from landfire.gov. BpSs with small footprint removed for clarity (&gt; 10k acres)"</span>,</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Acres"</span>,</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Succession Class"</span>) <span class="sc">+</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> rev, <span class="at">labels =</span> <span class="fu">wrap_format</span>(<span class="dv">20</span>)) <span class="sc">+</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">label =</span> comma, <span class="at">n.breaks =</span> <span class="dv">4</span>) <span class="sc">+</span> </span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span> </span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#f5922f"</span>, <span class="co"># orange</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"#532a66"</span>, <span class="co"># purple</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"#827c75"</span>, <span class="co"># grey</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"#f5eb2f"</span>, <span class="co"># yellow</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"#74a36f"</span> <span class="co"># green-natural veg</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">+</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">face =</span> <span class="st">"italic"</span>), <span class="co">#Default is hjust=1</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title.position =</span> <span class="st">"plot"</span>, <span class="co">#NEW parameter. Apply for subtitle too.</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.caption.position =</span>  <span class="st">"plot"</span>) <span class="sc">+</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.2</span>)) <span class="sc">+</span> </span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.margin =</span> <span class="fu">unit</span>(<span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.75</span>, <span class="fl">0.2</span>, <span class="fl">0.2</span>),</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"inches"</span>))</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>plot_acres</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="results_files/figure-html/stacked bps-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+<p>&lt;&lt;I MIGHT RECOMMEND PARING DOWN THIS BPS LIST TO THE TOP 8? 10?&gt;&gt;</p>
+<p>Figure 6. Chart representing historical ecosystems of the area of interest, split out by estimated acres of the various succession classes pre-European Settlement.</p>
+</section>
+</section>
+</section>
+<section id="estimated-percentages-of-historic-late-succesional" class="level2">
+<h2 class="anchored" data-anchor-id="estimated-percentages-of-historic-late-succesional">Estimated Percentages of <strong>Historic Late-Succesional</strong></h2>
+<p>This map represents the historical percentages of late-successional forest by ecosystem. Most of the area fell within 76-100% late-successional class grouping which is represented by the darker green areas. &lt;&lt;IF POSSIBLE IT WOULD BE GREAT TO MAKE ALL THE MAPS LOOK SIMILAR, SEE COMMENTS ON MAPS FROM THE METHODS TAB&gt;&gt;</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/historicOldGrowth.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Figure 7. Map of historic percentages of late successional forest. We used quantiles for the legend breaks. Percent late-successional forest was joined to the BpS data as an attribute in GIS</figcaption>
+</figure>
+</div>
+</section>
+<section id="estimated-percentage-of-current-late-successional" class="level2">
+<h2 class="anchored" data-anchor-id="estimated-percentage-of-current-late-successional">Estimated Percentage of <strong>Current Late-Successional</strong></h2>
+<p>This map represents the estimated current percentages of late-successional forest by ecosystem. Currently ~15% of the area is mapped as late succession which is represented by the darker green areas. In the PNW we sometimes underestimate succession class height, and so the data may have been undermapped.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/currentOldGrowth.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Figure 8. Map of current percentages of late successional forest. For this map, we used quantiles for the legend breaks. Combination of BpS and SClass attributes. (SClass).</figcaption>
+</figure>
+</div>
+</section>
+<section id="estimated-current-late-successional-percent-change" class="level2">
+<h2 class="anchored" data-anchor-id="estimated-current-late-successional-percent-change">Estimated <strong>Current Late-Successional Percent Change</strong></h2>
+<p>This map represents the percent change of late-successional forest by ecosystem. Darker green areas indicate an increase in the amount of LS forest, while brown areas indicate a loss. Percent of late-successional forest ranged from an 81% loss to a 75% gain. Most areas saw a loss of 60% or more.</p>
+<p>Some areas in the southern portion of the study area saw a net gain in late-successional forest. This is perhaps due to a history of fire suppression in the area, or an increase in different vegetation types. Land ownership includes land managed by USFS, BLM, and private landowners.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/difference.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Figure 9. Map of percent change in late successional forest. For this map, we used jenks natural breaks for the legend breaks.</figcaption>
+</figure>
+</div>
+</section>
+<section id="estimated-current-late-successional-percent-change-1" class="level2">
+<h2 class="anchored" data-anchor-id="estimated-current-late-successional-percent-change-1">Estimated <strong>Current Late-Successional Percent Change</strong></h2>
+<p>This chart shows changes in amounts of late-successional habitat by ecosystem, from “modeled historical” to “mapped with 2020 data”. The y axis are the top LANDFIRE BpSs and the x axis displays the percent change from historical to present-day &lt;&lt;WOULDN’T SAY PRESENT DAY BECAUSE TIME N ALL…OR 2020??&gt;&gt;. The arrows/ecosystems are arranged in descending order from most prevalent to least (at the bottom). Yellow arrows indicate a loss, while the green ones represent a gain.</p>
+<p>Almost all ecosystems have experienced substantial loss of late successional classes; 3 ecosystems experienced a gain in late successional classes. These represent percentages of the whole ecosystem.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/final_df.csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="do">## filter, group and add helper columns</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>old_classes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Late1"</span>, <span class="st">"Late2"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>old_growth_loss <span class="ot">&lt;-</span> raw_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(age_category <span class="sc">%in%</span> old_classes) <span class="sc">%&gt;%</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(bps_name) <span class="sc">%&gt;%</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">ref_percent =</span> <span class="fu">sum</span>(ref_percent, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">cur_percent =</span> <span class="fu">sum</span>(cur_percent, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">bps_acres =</span> <span class="fu">max</span>(bps_acres)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">change =</span> cur_percent <span class="sc">-</span> ref_percent,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">sign_change =</span> (change <span class="sc">&gt;</span><span class="dv">0</span>)) </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># try arrow plot</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>arrow_plot <span class="ot">&lt;-</span> old_growth_loss <span class="sc">|&gt;</span> </span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> ref_percent, <span class="at">xend =</span> cur_percent, </span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="fu">reorder</span>(bps_name, bps_acres), <span class="at">yend =</span> bps_name,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> sign_change)) <span class="sc">+</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.5</span>, <span class="st">'cm'</span>)),</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">'Percent Change'</span>, </span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">'Changes in Late Succession Classes Historical to ~2020'</span>,</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">'BpSs in descending order by total extent'</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#fcba03"</span>, <span class="st">"#10692c"</span>)) <span class="sc">+</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span> </span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_discrete</span>(<span class="at">limits =</span> rev, <span class="at">labels =</span> <span class="fu">wrap_format</span>(<span class="dv">20</span>)) </span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>arrow_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="results_files/figure-html/late-succession change-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+</section>
+<section id="estimated-percentage-of-historic-late-successional-open-canopy" class="level2">
+<h2 class="anchored" data-anchor-id="estimated-percentage-of-historic-late-successional-open-canopy">Estimated Percentage of <strong>Historic Late-Successional (open-canopy)</strong></h2>
+<p>This map represents the percent of historic, open-canopy, late-successional forests. Historic, open-canopy ecosystems ranged from 5-68% and darker purple areas indicate higher amounts of open canopy forest.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/historicOldGrowth_open.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Figure 11. Map of percent of historic late successional ecosystems that are classified as open canopy. We used jenks natural breaks for the legend breaks.</figcaption>
+</figure>
+</div>
+</section>
+<section id="estimated-percentage-of-historic-late-successional-closed-canopy" class="level2">
+<h2 class="anchored" data-anchor-id="estimated-percentage-of-historic-late-successional-closed-canopy">Estimated Percentage of <strong>Historic Late-Successional (closed-canopy)</strong></h2>
+<p>This map represents the percent of historic, closed-canopy, late-successional forest. &lt;&lt;SHOULD SAY SOMETHING LIKE ‘MOST OF THE FOREST FELL WITHIN THE 42-55% RANGE’ OR SOMETHING LIKE THAT&gt;&gt;Darker red areas indicate higher amounts of closed canopy forest. Coastal areas get more rain and the eastern spots are drier due to rain shadow.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/historicOldGrowth_closed.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Figure 12. Map of percent of historic late successional ecosystems that are classified as closed canopy. We used jenks natural breaks for the legend breaks.</figcaption>
+</figure>
+</div>
+</section>
+<section id="estimated-percentage-of-current-late-successional-open-canopy" class="level2">
+<h2 class="anchored" data-anchor-id="estimated-percentage-of-current-late-successional-open-canopy">Estimated Percentage of <strong>Current Late-Successional (open-canopy)</strong></h2>
+<p>This map represents the percent of current, open canopy, late-successional forest. Darker purple areas indicate higher amounts of open canopy forest. Late-successional, open-canopy forest ranged from 1-28% and are indicated by darker purple areas on the map. Note: there is very little open-canopy ecosystem remaining.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/currentOldGrowth_open.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Figure 13. Map of percent of current late successional ecosystems that are classified as open canopy. We used jenks natural breaks for the legend breaks.</figcaption>
+</figure>
+</div>
+</section>
+<section id="estimated-percentage-of-current-late-successional-closed-canopy" class="level2">
+<h2 class="anchored" data-anchor-id="estimated-percentage-of-current-late-successional-closed-canopy">Estimated Percentage of <strong>Current Late-Successional (closed-canopy)</strong></h2>
+<p>This map represents the percent of current, closed-canopy, late-successional forests. Darker red areas indicate higher amounts of closed-canopy forest. &lt;&lt;SHOULD THE LEGEND BREAKS BE DOUBLE CHECKED? I.E. LAST BREAK IS 32-84%?&gt;&gt;</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/currentOldGrowth_closed.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Figure 14. Map of percent of current late successional ecosystems that are classified as closed canopy. We used jenks natural breaks for the legend breaks.</figcaption>
+</figure>
+</div>
+</section>
+<section id="what-is-this-title-i-accidentally-deleted-it" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-this-title-i-accidentally-deleted-it">what is this title? I accidentally deleted it)</h2>
+<p>This chart shows change in amounts of late-successional open and closed canopy habitat by ecosystem, from modeled historical to mapped using data from 2020. The y axis are the top LANDFIRE BpSs and the x axis displays the percent change from historical to present-day &lt;&lt;WOULDN’T SAY PRESENT DAY BECAUSE TIME N ALL…OR 2020??&gt;&gt;. The arrows/ecosystems are arranged in descending order from most prevalent to least (at the bottom). Yellow arrows indicate a loss, while the green ones represent a gain.</p>
+<section id="example-interpretations" class="level3">
+<h3 class="anchored" data-anchor-id="example-interpretations">Example interpretations:</h3>
+<ol type="1">
+<li>North Pacific Maritime Mesic-Wet Douglas-fir Western Hemlock Forest experienced a ~73% decrease in closed-canopy and a ~5% decrease in open-canopy forest type.</li>
+<li>Mediterranean California Dry-Mesic Mixed Conifer Forest and Woodland experienced a ~23% increase in closed-canopy and a ~35% decrease in open-canopy forest type.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## old growth change split out by open/closed</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="do">## read in data</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/final_df.csv"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="do">## filter, group and add helper columns</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>old_classes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Late1"</span>, <span class="st">"Late2"</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>old_growth_chng_canopy <span class="ot">&lt;-</span> raw_data <span class="sc">%&gt;%</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(age_category <span class="sc">%in%</span> old_classes) <span class="sc">%&gt;%</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(canopy_category <span class="sc">!=</span> <span class="st">'ALL'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(bps_name, canopy_category) <span class="sc">%&gt;%</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">ref_percent =</span> <span class="fu">sum</span>(ref_percent, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">cur_percent =</span> <span class="fu">sum</span>(cur_percent, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>            <span class="at">bps_acres =</span> <span class="fu">max</span>(bps_acres)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">change =</span> cur_percent <span class="sc">-</span> ref_percent,</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>         <span class="at">sign_change =</span> (change <span class="sc">&gt;</span> <span class="dv">0</span>)) </span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="do">## try chart with facets</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>facet_names <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CLS"</span> <span class="ot">=</span> <span class="st">"Closed Canopy"</span>,</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="st">"OPN"</span> <span class="ot">=</span> <span class="st">"Open Canopy"</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>canopy_arrow_plot <span class="ot">&lt;-</span> old_growth_chng_canopy <span class="sc">%&gt;%</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> ref_percent, <span class="at">xend =</span> cur_percent, </span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="fu">reorder</span>(bps_name, bps_acres), <span class="at">yend =</span> bps_name,</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> sign_change)) <span class="sc">+</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.5</span>, <span class="st">'cm'</span>)),</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">'Percent Change'</span>, </span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">'Changes in Late Succession Classes Historical to ~2020'</span>,</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">'Arrows in descending order by total extent of ecosystem'</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#fcba03"</span>, <span class="st">"#10692c"</span>)) <span class="sc">+</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span> </span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> canopy_category, </span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>             <span class="at">ncol =</span> <span class="dv">2</span>,</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>             <span class="at">labeller =</span> <span class="fu">as_labeller</span>(facet_names))<span class="sc">+</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_discrete</span>(<span class="at">limits =</span> rev, <span class="at">labels =</span> <span class="fu">wrap_format</span>(<span class="dv">20</span>))</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>canopy_arrow_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="results_files/figure-html/late-succession change, open and closed-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+<p>Figure 15. Chart showing change in amounts of late-successional open and closed canopy habitat by ecosystem, from modeled historical to mapped 2020</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
