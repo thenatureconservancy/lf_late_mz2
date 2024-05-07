@@ -13,7 +13,7 @@ We mapped 28 BpSs within the area of interest. We excluded BpSs with footprints 
 
 ### Major Biophysical Settings with Estimated Reference 
 #### Separated by Succession Classes
-```{r stacked bps, message=FALSE, warning=FALSE, fig.width=9, fig.height=16}
+```{r stacked bps, message=FALSE, echo=FALSE, warning=FALSE, fig.width=9, fig.height=16}
 
 library(tidyverse)
 library(scales)
@@ -21,7 +21,7 @@ library(scales)
 
 raw_data <- read.csv("data/final_df.csv") %>%
   filter(!is.na(age_category)) %>%
-  filter(bps_acres > 10000)
+  filter(bps_acres > 100000)
 
 
 
@@ -47,7 +47,7 @@ plot_acres <-
   labs(
     title = "",
     subtitle = "",
-    caption = "Data from landfire.gov. BpSs with small footprint removed for clarity (> 10k acres)",
+    caption = "Data from landfire.gov. BpSs with small footprint removed for clarity (> 100k acres)",
     x = "",
     y = "Acres",
     fill = "Succession Class") +
@@ -72,16 +72,15 @@ plot_acres
 
 ```
 
-<<I MIGHT RECOMMEND PARING DOWN THIS BPS LIST TO THE TOP 8? 10?>>
 
 Figure 6. Chart representing historical ecosystems of the area of interest, split out by estimated acres of the various succession classes pre-European Settlement.
 
-## Estimated Percentages of **Historic Late-Succesional**
+## Estimated Percentages of **Late-Succesional Habitat, Reference and Current**
 
-This map represents the historical percentages of late-successional forest by ecosystem. Most of the area fell within 76-100% late-successional class grouping which is represented by the darker green areas. <<IF POSSIBLE IT WOULD BE GREAT TO MAKE ALL THE MAPS LOOK SIMILAR, SEE COMMENTS ON MAPS FROM THE METHODS TAB>>
+The map below represents the reference and current percentages of late-successional forest by ecosystem. In general there has been a substantial loss of late-successional habitat in this area. 
 
 
-![Figure 7. Map of historic percentages of late successional forest. We used quantiles for the legend breaks. Percent late-successional forest was joined to the BpS data as an attribute in GIS ](assets/historicOldGrowth.jpg){width=80%}
+![Map of historic percentages of late successional forest. We used quantiles for the legend breaks. Percent late-successional forest was joined to the BpS data as an attribute in GIS ](assets/ref_cur_late.jpg){width=80%}
 
 
 ## Estimated Percentage of **Current Late-Successional**

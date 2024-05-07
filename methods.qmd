@@ -80,7 +80,6 @@ We used the [Clip Raster](https://pro.arcgis.com/en/pro-app/latest/tool-referenc
 
 #### **2. Historical Percentages of Late-Successional Forests in Western Oregon - (from) LANDFIRE BpS**
 
-![Figure 3. Map Zone 2 Ecosystem Footprint](assets/historicOldGrowth.jpg){width=80%}
 
 For each BpS, we needed to estimate how much late-open and late-closed forest would have historically been present. This information was contained in the BpS and succession class descriptions. Search for a specific BpS model [here](https://landfirereview.org/search.php). For actual data work we used a modified version of the ["Reference Condition" table](https://landfire.gov/zip/LANDFIRE_CONUS_Reference_Condition_Table_August_2020.zip) (see modified data table below).<<WHAT DOES THIS SENTENCE MEAN? NEED TO REWRITE>>
 
@@ -105,11 +104,8 @@ We used the LANDFIRE [succession class dataset](https://landfire.gov/sclass.php)
 The rules for defining the structural characteristics of each succession class are in the [BpS descriptions](https://www.landfire.gov/bps-models.php), and are essentially combinations of height, cover and type. 
 
 
-![Figure 5. Current Percentages of Late-Successional Forest](assets/currentOldGrowth.jpg){width=80%}
-<<SAME COMMENTS ON THIS MAP AS ON THE MAP ABOVE>>
+####  Next step: wrangling data exported from ArcGIS Pro
 
-####  Wrangling data post-GIS
-<<I DON'T QUITE UNDERSTAND WHAT IS BEING SUMMARIZED HERE - IS THIS WHAT TO DO NEXT? IF SO, WE SHOULD TITLE IT "NEXT STEP" OR SOMETHING LIKE THAT>>
 
 Once we have clipped, combined and attributed spatial data in ArcGIS pro, we need to do a little data wrangling in R to further prep the spatial data for mapping and to make some charts.  In summary we:
 
