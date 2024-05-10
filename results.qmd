@@ -2,18 +2,13 @@
 title: "Results"
 ---
 
-# Results
 
-## Historic Ecosystems
+## Historic  Ecosystems
 
-This chart represents the historical ecosystems of our area of interest, split out by estimated acres of the various succession classes, pre-European Settlement. On the y axis are names of LANDFIRE’s BpSs and the x axis represent the number of acres. The colors represent the age classes; the purple and orange areas represent late-succession ecosystems. 
-Note: Late1 and Late2 don’t necessarily mean open/closed canopy.
+This chart represents the historical ecosystems of our area of interest, split out by estimated acres of the various succession classes, pre-European Settlement (referred to as 'Reference'). On the y axis are names of LANDFIRE’s BpSs and the x axis represent the number of acres. The colors represent the age classes; the purple and orange areas represent late-succession ecosystems. We mapped 28 BpSs within the area of interest. For the chart below excluded BpSs with footprints of less than 100,000 acres. Roughly 60% of the area is estimated to have been historically classified as late-successional habitat.
 
-We mapped 28 BpSs within the area of interest. We excluded BpSs with footprints of less than 10,000 acres. Roughly 60% of the area is estimated to have been historically classified as late-successional habitat and can be considered reference conditions as determined by the local experts that created the BpS models for the area.
 
-### Major Biophysical Settings with Estimated Reference 
-#### Separated by Succession Classes
-```{r stacked bps, message=FALSE, echo=FALSE, warning=FALSE, fig.width=9, fig.height=16}
+```{r stacked bps, message=FALSE, echo=FALSE, warning=FALSE, fig.width=9, fig.height=10}
 
 library(tidyverse)
 library(scales)
@@ -22,7 +17,6 @@ library(scales)
 raw_data <- read.csv("data/final_df.csv") %>%
   filter(!is.na(age_category)) %>%
   filter(bps_acres > 100000)
-
 
 
 # get labels ordered properly
@@ -73,40 +67,22 @@ plot_acres
 ```
 
 
-Figure 6. Chart representing historical ecosystems of the area of interest, split out by estimated acres of the various succession classes pre-European Settlement.
 
 ## Estimated Percentages of **Late-Succesional Habitat, Reference and Current**
 
-The map below represents the reference and current percentages of late-successional forest by ecosystem. In general there has been a substantial loss of late-successional habitat in this area. 
+The map below represents the reference and current (ca2020) percentages of late-successional forest by ecosystem. In general there has been a substantial loss of late-successional habitat in this area. Loss is calculated per ecosystem, and the percent is the same across each ecosystem's footprint.  We did not map where late succession occured historically as it likely moved around so we cannot calculate change at a per pixel level.
 
 
-![Map of historic percentages of late successional forest. We used quantiles for the legend breaks. Percent late-successional forest was joined to the BpS data as an attribute in GIS ](assets/ref_cur_late.jpg){width=80%}
+![](assets/ref_cur_late.jpg){width=80%}
 
 
-## Estimated Percentage of **Current Late-Successional**
+## Estimated Changes in Late Successional, Reference to Current
 
-This map represents the estimated current percentages of late-successional forest by ecosystem. Currently ~15% of the area is mapped as late succession which is represented by the darker green areas. In the PNW we sometimes underestimate succession class height, and so the data may have been undermapped.
+This chart shows changes in amounts of late-successional habitat by ecosystem, reference to current (ca2020). The y axis are the top LANDFIRE BpSs and the x axis displays the percent change from reference to current . The arrows/ecosystems are arranged in descending order from most prevalent to least (at the bottom). Yellow arrows indicate a loss, while the green ones represent a gain.
 
-![Figure 8. Map of current percentages of late successional forest. For this map, we used quantiles for the legend breaks. Combination of BpS and SClass attributes. (SClass).](assets/currentOldGrowth.jpg){width=80%}
+Here we present the same ecosystems as above, i.e., ones mapped with more than 100,000ac. 
 
-## Estimated **Current Late-Successional Percent Change**
-
-This map represents the percent change of late-successional forest by ecosystem. Darker green areas indicate an increase in the amount of LS forest, while brown areas indicate a loss. Percent of late-successional forest ranged from an 81% loss to a 75% gain. Most areas saw a loss of 60% or more. 
-
-Some areas in the southern portion of the study area saw a net gain in late-successional forest. This is perhaps due to a history of fire suppression in the area, or an increase in different vegetation types. Land ownership includes land managed by USFS, BLM, and private landowners.
-
-![Figure 9. Map of percent change in late successional forest. For this map, we used jenks natural breaks for the legend breaks.](assets/difference.jpg){width=80%}
-
-
-## Estimated **Current Late-Successional Percent Change**
-
-This chart shows changes in amounts of late-successional habitat by ecosystem, from "modeled historical" to "mapped with 2020 data". The y axis are the top LANDFIRE BpSs and the x axis displays the percent change from historical to present-day <<WOULDN'T SAY PRESENT DAY BECAUSE TIME N ALL...OR 2020??>>. The arrows/ecosystems are arranged in descending order from most prevalent to least (at the bottom). Yellow arrows indicate a loss, while the green ones represent a gain.
-
-Almost all ecosystems have experienced substantial loss of late successional classes; 3 ecosystems experienced a gain in late successional classes. These represent percentages of the whole ecosystem.
-
-```{r late-succession change, message=FALSE, warning=FALSE, fig.width=9, fig.height=18}
-
-raw_data <- read.csv("data/final_df.csv")
+```{r late-succession change, message=FALSE, echo=FALSE, warning=FALSE, fig.width=9, fig.height=8}
 
 
 ## filter, group and add helper columns
@@ -129,7 +105,7 @@ old_growth_loss <- raw_data %>%
 arrow_plot <- old_growth_loss |> 
   ggplot(aes(
       x = ref_percent, xend = cur_percent, 
-      y = reorder(bps_name, bps_acres), yend = bps_name,
+      y = reorder(bps_name, -bps_acres), yend = bps_name,
       color = sign_change)) +
   geom_segment(
     arrow = arrow(angle = 30, length = unit(0.5, 'cm')),
