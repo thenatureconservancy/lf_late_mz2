@@ -2,9 +2,8 @@
 title: "Methods"
 ---
 
-# Materials and Methods
 
-## LANDFIRE-Powered Inputs
+### Data inputs
 
 The [LANDFIRE](https://landfire.gov/) Program provides 25+ national geo-spatial layers (e.g. vegetation, fuel, disturbance, etc.), databases, and ecological models that are available to the public for the U.S. and insular areas.
 
@@ -18,31 +17,22 @@ We relied on Three LANDFIRE Products as inputs for this initial analysis:
 
 
 ### Area of interest:
-<br>
 
-```{r libraries, message=FALSE, warning=FALSE, include=FALSE}
-
+```{r locator map, message=FALSE, warning=FALSE}
+# load packages for page
 library(sf)
 library(terra)
 library(tidyverse)
 library(tmap)
 library(janitor)
-library(DT)
 library(scales)
+library(kableExtra)
 
-```
-
-
-```{r read shapefile, message=FALSE, warning=FALSE, include=FALSE}
 #  read shape
-MapZone2<- st_read("data/mz2.shp") %>% 
+MapZone2<- st_read("data/mz2.shp", quiet = TRUE) %>% 
   st_transform(crs = 5070) %>%
   st_union() %>%
   st_sf()
-```
-
-```{r locator map, message=FALSE, warning=FALSE, echo=FALSE}
-
 
 # toggle tmap mode to interactive viewing
 tmap_mode("view")
@@ -66,9 +56,9 @@ Figure 2. Study area is the western coast of Oregon along the western side of th
 
 Below we describe the data inputs and GIS operations.  
 
+## GIS operations
 
-
-#### **1. Ecosystem footprint Data - (from) LANDFIRE BpS**
+### Clipping ecosystem footprint Data - (from) LANDFIRE BpS**
 
 We relied on LANDFIRE's [Biophysical Settings (BpS)](https://landfire.gov/bps.php) to obtain "potential ecosystem footprints" to represent what would have been present prior to European colonization of North America. LANDFIRE's BpS suite is based on both the current biophysical environment and an approximation of the historical disturbance regime. 
 
@@ -78,20 +68,26 @@ We used the [Clip Raster](https://pro.arcgis.com/en/pro-app/latest/tool-referenc
 
 
 
-#### **2. Historical Percentages of Late-Successional Forests in Western Oregon - (from) LANDFIRE BpS**
+### Obtaining historical Percentages of Late-Successional Forests in Western Oregon - (from) LANDFIRE BpS**
 
 
-For each BpS, we needed to estimate how much late-open and late-closed forest would have historically been present. This information was contained in the BpS and succession class descriptions. Search for a specific BpS model [here](https://landfirereview.org/search.php). For actual data work we used a modified version of the ["Reference Condition" table](https://landfire.gov/zip/LANDFIRE_CONUS_Reference_Condition_Table_August_2020.zip) (see modified data table below).<<WHAT DOES THIS SENTENCE MEAN? NEED TO REWRITE>>
+For each BpS, we needed to get estimates how much late-open and late-closed forest would have historically been present. This information was developed in BpS state-and-transition models, and available in a couple formats:
 
-#### **Example - Below is a screenshot of a BpS model:** 
+1. The BpS Reference Condition Table obtainable by clicking "Reference Conditions" [here](https://landfire.gov/bps-models.php).
+2. BpS description documents.  We downloaded them by filtering for Map Zone 2 at https://landfirereview.org/search.php.  
+
+
+**Example - Below is a screenshot of a BpS model:** 
 1. Boxes represent the succession classes, or structural stages of an ecosystem
 2. Lines represent succession and disturbance pathways
-3. What's missing? The quantitative, disturbance inputs from the model, or the outputs which include percent of each succession class that would have occurred historically (visit the [LANDFIRE Vegetation Modeling site](https://thenatureconservancy.github.io/landfiremodels/) to learn more about the modeling process).
+3. What's missing from the diagram? The quantitative, disturbance inputs from the model, or the outputs which include percent of each succession class that would have occurred historically (visit the [LANDFIRE Vegetation Modeling site](https://thenatureconservancy.github.io/landfiremodels/) to learn more about the modeling process).
 
 
-![Figure 4. BpS Model](assets/bpsmodel.PNG)
+![](assets/bpsmodel.PNG)
 
-#### **3. Current Succession Classes**
+
+
+### **Assessing Current Succession Classes**
 
 We used the LANDFIRE [succession class dataset](https://landfire.gov/sclass.php) to estimate the percentage of each succession class that occurs (per BpS) on today's landscape. Each pixel within a BpS is labeled "A through E" for the "reference" states, and includes labels for other categories such as agriculture and urban. 
 
@@ -104,7 +100,7 @@ We used the LANDFIRE [succession class dataset](https://landfire.gov/sclass.php)
 The rules for defining the structural characteristics of each succession class are in the [BpS descriptions](https://www.landfire.gov/bps-models.php), and are essentially combinations of height, cover and type. 
 
 
-####  Next step: wrangling data exported from ArcGIS Pro
+### Wrangling data exported from ArcGIS Pro
 
 
 Once we have clipped, combined and attributed spatial data in ArcGIS pro, we need to do a little data wrangling in R to further prep the spatial data for mapping and to make some charts.  In summary we:
@@ -118,7 +114,7 @@ Once we have clipped, combined and attributed spatial data in ArcGIS pro, we nee
 3. Do a little cleaning, and make a new 'join_field'
 4. Calculate reference and current acres per succession class per BpS
 
-Click the "Show" button to see code.  Final data table can be explored below.  
+Click the "Code" button to see code.  
 <br>
 
 
@@ -201,8 +197,7 @@ final_df3 <- final_df2 %>%
 
 # save to csv to explore in Excel, and reorder columns
 
-write.csv(final_df3, file = "data/final_df.csv", row.names = FALSE)
-
+#write.csv(final_df3, file = "data/final_df.csv", row.names = FALSE)
 
 
 
@@ -210,15 +205,6 @@ write.csv(final_df3, file = "data/final_df.csv", row.names = FALSE)
 
 
 The resulting final data table was then joined back to the combined BpS-Succession Class data in ArcGIS Pro for mapping. 
-
-
-### Final Data Table
-
-```{r final data table, message=FALSE, warning=FALSE}
-datatable(final_df3)
-
-```
-
 
 
 

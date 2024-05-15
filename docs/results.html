@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -151,17 +117,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#historic-ecosystems" id="toc-historic-ecosystems" class="nav-link active" data-scroll-target="#historic-ecosystems">Historic Ecosystems</a></li>
+  <li><a href="#historical-ecosystems" id="toc-historical-ecosystems" class="nav-link active" data-scroll-target="#historical-ecosystems">Historical Ecosystems</a></li>
   <li><a href="#estimated-percentages-of-late-succesional-habitat-reference-and-current" id="toc-estimated-percentages-of-late-succesional-habitat-reference-and-current" class="nav-link" data-scroll-target="#estimated-percentages-of-late-succesional-habitat-reference-and-current">Estimated Percentages of <strong>Late-Succesional Habitat, Reference and Current</strong></a></li>
-  <li><a href="#estimated-changes-in-late-successional-reference-to-current-ca-2020" id="toc-estimated-changes-in-late-successional-reference-to-current-ca-2020" class="nav-link" data-scroll-target="#estimated-changes-in-late-successional-reference-to-current-ca-2020">Estimated Changes in Late Successional, Reference to Current (ca 2020)</a></li>
-  <li><a href="#estimated-percentage-of-historic-late-successional-open-canopy" id="toc-estimated-percentage-of-historic-late-successional-open-canopy" class="nav-link" data-scroll-target="#estimated-percentage-of-historic-late-successional-open-canopy">Estimated Percentage of <strong>Historic Late-Successional (open-canopy)</strong></a></li>
-  <li><a href="#estimated-percentage-of-historic-late-successional-closed-canopy" id="toc-estimated-percentage-of-historic-late-successional-closed-canopy" class="nav-link" data-scroll-target="#estimated-percentage-of-historic-late-successional-closed-canopy">Estimated Percentage of <strong>Historic Late-Successional (closed-canopy)</strong></a></li>
-  <li><a href="#estimated-percentage-of-current-late-successional-open-canopy" id="toc-estimated-percentage-of-current-late-successional-open-canopy" class="nav-link" data-scroll-target="#estimated-percentage-of-current-late-successional-open-canopy">Estimated Percentage of <strong>Current Late-Successional (open-canopy)</strong></a></li>
-  <li><a href="#estimated-percentage-of-current-late-successional-closed-canopy" id="toc-estimated-percentage-of-current-late-successional-closed-canopy" class="nav-link" data-scroll-target="#estimated-percentage-of-current-late-successional-closed-canopy">Estimated Percentage of <strong>Current Late-Successional (closed-canopy)</strong></a></li>
-  <li><a href="#what-is-this-title-i-accidentally-deleted-it" id="toc-what-is-this-title-i-accidentally-deleted-it" class="nav-link" data-scroll-target="#what-is-this-title-i-accidentally-deleted-it">what is this title? I accidentally deleted it)</a>
-  <ul class="collapse">
-  <li><a href="#example-interpretations" id="toc-example-interpretations" class="nav-link" data-scroll-target="#example-interpretations">Example interpretations:</a></li>
-  </ul></li>
+  <li><a href="#estimated-changes-in-late-successional-reference-to-current" id="toc-estimated-changes-in-late-successional-reference-to-current" class="nav-link" data-scroll-target="#estimated-changes-in-late-successional-reference-to-current">Estimated Changes in Late Successional, Reference to Current</a></li>
+  <li><a href="#reference-and-current-open-canopy-late-successional-habitat" id="toc-reference-and-current-open-canopy-late-successional-habitat" class="nav-link" data-scroll-target="#reference-and-current-open-canopy-late-successional-habitat">Reference and current open-canopy late successional habitat</a></li>
+  <li><a href="#reference-and-current-closed-canopy-late-successional-habitat" id="toc-reference-and-current-closed-canopy-late-successional-habitat" class="nav-link" data-scroll-target="#reference-and-current-closed-canopy-late-successional-habitat">Reference and current closed-canopy late successional habitat</a></li>
+  <li><a href="#estimated-changes-in-late-successional-habitat-reference-to-current-open-and-closed" id="toc-estimated-changes-in-late-successional-habitat-reference-to-current-open-and-closed" class="nav-link" data-scroll-target="#estimated-changes-in-late-successional-habitat-reference-to-current-open-and-closed">Estimated Changes in Late Successional Habitat, Reference to Current, Open and Closed</a></li>
   </ul>
 </nav>
     </div>
@@ -185,9 +146,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="historic-ecosystems" class="level2">
-<h2 class="anchored" data-anchor-id="historic-ecosystems">Historic Ecosystems</h2>
-<p>This chart represents the historical ecosystems of our area of interest, split out by estimated acres of the various succession classes, pre-European Settlement. On the y axis are names of LANDFIRE’s BpSs and the x axis represent the number of acres. The colors represent the age classes; the purple and orange areas represent late-succession ecosystems. We mapped 28 BpSs within the area of interest. For the chart below excluded BpSs with footprints of less than 100,000 acres. Roughly 60% of the area is estimated to have been historically classified as late-successional habitat.</p>
+<section id="historical-ecosystems" class="level2">
+<h2 class="anchored" data-anchor-id="historical-ecosystems">Historical Ecosystems</h2>
+<p>This chart represents the historical ecosystems of our area of interest, split out by estimated acres of the various succession classes, pre-European Settlement (referred to as ‘Reference’). On the y axis are names of LANDFIRE’s BpSs and the x axis represent the number of acres. The colors represent the age classes; the purple and orange areas represent late-succession ecosystems. We mapped 28 BpSs within the area of interest. For the chart below excluded BpSs with footprints of less than 100,000 acres. Roughly 60% of the area is estimated to have been historically classified as late-successional habitat.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="results_files/figure-html/stacked bps-1.png" class="img-fluid" width="864"></p>
@@ -196,134 +157,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="estimated-percentages-of-late-succesional-habitat-reference-and-current" class="level2">
 <h2 class="anchored" data-anchor-id="estimated-percentages-of-late-succesional-habitat-reference-and-current">Estimated Percentages of <strong>Late-Succesional Habitat, Reference and Current</strong></h2>
-<p>The map below represents the reference and current percentages of late-successional forest by ecosystem. In general there has been a substantial loss of late-successional habitat in this area. Loss is calculated per ecosystem, and the percent is the same across each ecosystem’s footprint. We did not map where late succession occured historically as it likely moved around so we cannot calculate change at a per pixel level.</p>
+<p>The map below represents the reference and current (ca2020) percentages of late-successional forest by ecosystem. In general there has been a substantial loss of late-successional habitat in this area. Loss is calculated per ecosystem, and the percent is the same across each ecosystem’s footprint. We did not map where late succession occured historically as it likely moved around so we cannot calculate change at a per pixel level.</p>
 <p><img src="assets/ref_cur_late.jpg" class="img-fluid" style="width:80.0%"></p>
 </section>
-<section id="estimated-changes-in-late-successional-reference-to-current-ca-2020" class="level2">
-<h2 class="anchored" data-anchor-id="estimated-changes-in-late-successional-reference-to-current-ca-2020">Estimated Changes in Late Successional, Reference to Current (ca 2020)</h2>
-<p>This chart shows changes in amounts of late-successional habitat by ecosystem, reference to present. The y axis are the top LANDFIRE BpSs and the x axis displays the percent change from reference to 2020. The arrows/ecosystems are arranged in descending order from most prevalent to least (at the bottom). Yellow arrows indicate a loss, while the green ones represent a gain.</p>
-<p>Almost all ecosystems have experienced substantial loss of late successional classes; 3 ecosystems experienced a gain in late successional classes. These represent percentages of the whole ecosystem.</p>
+<section id="estimated-changes-in-late-successional-reference-to-current" class="level2">
+<h2 class="anchored" data-anchor-id="estimated-changes-in-late-successional-reference-to-current">Estimated Changes in Late Successional, Reference to Current</h2>
+<p>This chart shows changes in amounts of late-successional habitat by ecosystem, reference to current (ca2020). The y axis are the top LANDFIRE BpSs and the x axis displays the percent change from reference to current . The arrows/ecosystems are arranged in descending order from most prevalent to least (at the bottom). Yellow arrows indicate a loss, while the green ones represent a gain.</p>
+<p>Here we present the same ecosystems as above, i.e., ones mapped with more than 100,000ac.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="results_files/figure-html/late-succession change-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
 </section>
-<section id="estimated-percentage-of-historic-late-successional-open-canopy" class="level2">
-<h2 class="anchored" data-anchor-id="estimated-percentage-of-historic-late-successional-open-canopy">Estimated Percentage of <strong>Historic Late-Successional (open-canopy)</strong></h2>
-<p>This map represents the percent of historic, open-canopy, late-successional forests. Historic, open-canopy ecosystems ranged from 5-68% and darker purple areas indicate higher amounts of open canopy forest.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/historicOldGrowth_open.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">Figure 11. Map of percent of historic late successional ecosystems that are classified as open canopy. We used jenks natural breaks for the legend breaks.</figcaption>
-</figure>
-</div>
+<section id="reference-and-current-open-canopy-late-successional-habitat" class="level2">
+<h2 class="anchored" data-anchor-id="reference-and-current-open-canopy-late-successional-habitat">Reference and current open-canopy late successional habitat</h2>
+<p>This map represents the percent of reference (left) and current (right), open-canopy, late-successional forests. Reference open-canopy late-succession habitat ranged from 5-68% per BpS, and currently that amount ranges from 1-28% per BpS.</p>
+<p><img src="assets/ref_cur_late_open.jpg" class="img-fluid" style="width:80.0%"></p>
 </section>
-<section id="estimated-percentage-of-historic-late-successional-closed-canopy" class="level2">
-<h2 class="anchored" data-anchor-id="estimated-percentage-of-historic-late-successional-closed-canopy">Estimated Percentage of <strong>Historic Late-Successional (closed-canopy)</strong></h2>
-<p>This map represents the percent of historic, closed-canopy, late-successional forest. &lt;&lt;SHOULD SAY SOMETHING LIKE ‘MOST OF THE FOREST FELL WITHIN THE 42-55% RANGE’ OR SOMETHING LIKE THAT&gt;&gt;Darker red areas indicate higher amounts of closed canopy forest. Coastal areas get more rain and the eastern spots are drier due to rain shadow.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/historicOldGrowth_closed.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">Figure 12. Map of percent of historic late successional ecosystems that are classified as closed canopy. We used jenks natural breaks for the legend breaks.</figcaption>
-</figure>
-</div>
+<section id="reference-and-current-closed-canopy-late-successional-habitat" class="level2">
+<h2 class="anchored" data-anchor-id="reference-and-current-closed-canopy-late-successional-habitat">Reference and current closed-canopy late successional habitat</h2>
+<p>This map represents the percent of reference (left) and current (right), closed-canopy, late-successional forests. Reference closed-canopy late-succession habitat ranged from 42-55% per BpS, and currently that amount ranges from 32-84% per BpS.</p>
+<p><img src="assets/ref_cur_late_closed.jpg" class="img-fluid" style="width:80.0%"></p>
 </section>
-<section id="estimated-percentage-of-current-late-successional-open-canopy" class="level2">
-<h2 class="anchored" data-anchor-id="estimated-percentage-of-current-late-successional-open-canopy">Estimated Percentage of <strong>Current Late-Successional (open-canopy)</strong></h2>
-<p>This map represents the percent of current, open canopy, late-successional forest. Darker purple areas indicate higher amounts of open canopy forest. Late-successional, open-canopy forest ranged from 1-28% and are indicated by darker purple areas on the map. Note: there is very little open-canopy ecosystem remaining.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/currentOldGrowth_open.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">Figure 13. Map of percent of current late successional ecosystems that are classified as open canopy. We used jenks natural breaks for the legend breaks.</figcaption>
-</figure>
-</div>
-</section>
-<section id="estimated-percentage-of-current-late-successional-closed-canopy" class="level2">
-<h2 class="anchored" data-anchor-id="estimated-percentage-of-current-late-successional-closed-canopy">Estimated Percentage of <strong>Current Late-Successional (closed-canopy)</strong></h2>
-<p>This map represents the percent of current, closed-canopy, late-successional forests. Darker red areas indicate higher amounts of closed-canopy forest. &lt;&lt;SHOULD THE LEGEND BREAKS BE DOUBLE CHECKED? I.E. LAST BREAK IS 32-84%?&gt;&gt;</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/currentOldGrowth_closed.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption class="figure-caption">Figure 14. Map of percent of current late successional ecosystems that are classified as closed canopy. We used jenks natural breaks for the legend breaks.</figcaption>
-</figure>
-</div>
-</section>
-<section id="what-is-this-title-i-accidentally-deleted-it" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-this-title-i-accidentally-deleted-it">what is this title? I accidentally deleted it)</h2>
-<p>This chart shows change in amounts of late-successional open and closed canopy habitat by ecosystem, from modeled historical to mapped using data from 2020. The y axis are the top LANDFIRE BpSs and the x axis displays the percent change from historical to present-day &lt;&lt;WOULDN’T SAY PRESENT DAY BECAUSE TIME N ALL…OR 2020??&gt;&gt;. The arrows/ecosystems are arranged in descending order from most prevalent to least (at the bottom). Yellow arrows indicate a loss, while the green ones represent a gain.</p>
-<section id="example-interpretations" class="level3">
-<h3 class="anchored" data-anchor-id="example-interpretations">Example interpretations:</h3>
-<ol type="1">
-<li>North Pacific Maritime Mesic-Wet Douglas-fir Western Hemlock Forest experienced a ~73% decrease in closed-canopy and a ~5% decrease in open-canopy forest type.</li>
-<li>Mediterranean California Dry-Mesic Mixed Conifer Forest and Woodland experienced a ~23% increase in closed-canopy and a ~35% decrease in open-canopy forest type.</li>
-</ol>
+<section id="estimated-changes-in-late-successional-habitat-reference-to-current-open-and-closed" class="level2">
+<h2 class="anchored" data-anchor-id="estimated-changes-in-late-successional-habitat-reference-to-current-open-and-closed">Estimated Changes in Late Successional Habitat, Reference to Current, Open and Closed</h2>
+<p>This chart shows change in amounts of late-successional open and closed canopy habitat by ecosystem, from modeled reference to mapped using data from 2020. The y axis are the top LANDFIRE BpSs and the x axis displays the percent change from reference to ca2020. The arrows/ecosystems are arranged in descending order from most prevalent to least (at the bottom). Yellow arrows indicate a loss, while the green ones represent a gain.</p>
+<p><strong>Example interpretations:</strong> 1) North Pacific Maritime Mesic-Wet Douglas-fir Western Hemlock Forest experienced a ~73% decrease in closed-canopy and a ~5% decrease in open-canopy forest type. 2) Mediterranean California Dry-Mesic Mixed Conifer Forest and Woodland experienced a ~23% increase in closed-canopy and a ~35% decrease in open-canopy forest type.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## old growth change split out by open/closed</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="do">## read in data</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/final_df.csv"</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="do">## filter, group and add helper columns</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>old_classes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Late1"</span>, <span class="st">"Late2"</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>old_growth_chng_canopy <span class="ot">&lt;-</span> raw_data <span class="sc">%&gt;%</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(age_category <span class="sc">%in%</span> old_classes) <span class="sc">%&gt;%</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(canopy_category <span class="sc">!=</span> <span class="st">'ALL'</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(bps_name, canopy_category) <span class="sc">%&gt;%</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">ref_percent =</span> <span class="fu">sum</span>(ref_percent, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">cur_percent =</span> <span class="fu">sum</span>(cur_percent, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>            <span class="at">bps_acres =</span> <span class="fu">max</span>(bps_acres)) <span class="sc">%&gt;%</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">change =</span> cur_percent <span class="sc">-</span> ref_percent,</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>         <span class="at">sign_change =</span> (change <span class="sc">&gt;</span> <span class="dv">0</span>)) </span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="do">## try chart with facets</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>facet_names <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CLS"</span> <span class="ot">=</span> <span class="st">"Closed Canopy"</span>,</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="st">"OPN"</span> <span class="ot">=</span> <span class="st">"Open Canopy"</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>canopy_arrow_plot <span class="ot">&lt;-</span> old_growth_chng_canopy <span class="sc">%&gt;%</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> ref_percent, <span class="at">xend =</span> cur_percent, </span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="fu">reorder</span>(bps_name, bps_acres), <span class="at">yend =</span> bps_name,</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> sign_change)) <span class="sc">+</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.5</span>, <span class="st">'cm'</span>)),</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">'Percent Change'</span>, </span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">'Changes in Late Succession Classes Historical to ~2020'</span>,</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">'Arrows in descending order by total extent of ecosystem'</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#fcba03"</span>, <span class="st">"#10692c"</span>)) <span class="sc">+</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span> </span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> canopy_category, </span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>             <span class="at">ncol =</span> <span class="dv">2</span>,</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>             <span class="at">labeller =</span> <span class="fu">as_labeller</span>(facet_names))<span class="sc">+</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_discrete</span>(<span class="at">limits =</span> rev, <span class="at">labels =</span> <span class="fu">wrap_format</span>(<span class="dv">20</span>))</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>canopy_arrow_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="results_files/figure-html/late-succession change, open and closed-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
-<p>Figure 15. Chart showing change in amounts of late-successional open and closed canopy habitat by ecosystem, from modeled historical to mapped 2020</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

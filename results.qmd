@@ -2,8 +2,7 @@
 title: "Results"
 ---
 
-
-## Historic  Ecosystems
+## Historical  Ecosystems
 
 This chart represents the historical ecosystems of our area of interest, split out by estimated acres of the various succession classes, pre-European Settlement (referred to as 'Reference'). On the y axis are names of LANDFIRE’s BpSs and the x axis represent the number of acres. The colors represent the age classes; the purple and orange areas represent late-succession ecosystems. We mapped 28 BpSs within the area of interest. For the chart below excluded BpSs with footprints of less than 100,000 acres. Roughly 60% of the area is estimated to have been historically classified as late-successional habitat.
 
@@ -113,7 +112,7 @@ arrow_plot <- old_growth_loss |>
   labs(
     x = 'Percent Change', 
     y = element_blank(),
-    title = 'Changes in Late Succession Classes Historical to ~2020',
+    title = 'Changes in Late Succession Classes References to ~2020',
     subtitle = 'BpSs in descending order by total extent'
   ) +
   scale_color_manual(
@@ -129,49 +128,37 @@ arrow_plot
 
 
 
-## Estimated Percentage of **Historic Late-Successional (open-canopy)**
+## Reference and current open-canopy late successional habitat
 
-This map represents the percent of historic, open-canopy, late-successional forests. Historic, open-canopy ecosystems ranged from 5-68% and darker purple areas indicate higher amounts of open canopy forest. 
+This map represents the percent of reference (left) and current (right), open-canopy, late-successional forests. Reference open-canopy late-succession habitat ranged from 5-68% per BpS, and currently that amount ranges from 1-28% per BpS. 
 
-![Figure 11. Map of percent of historic late successional ecosystems that are classified as open canopy. We used jenks natural breaks for the legend breaks.](assets/historicOldGrowth_open.png){width=80%}
-
-## Estimated Percentage of **Historic Late-Successional (closed-canopy)**
-
-This map represents the percent of historic, closed-canopy, late-successional forest. <<SHOULD SAY SOMETHING LIKE 'MOST OF THE FOREST FELL WITHIN THE 42-55% RANGE' OR SOMETHING LIKE THAT>>Darker red areas indicate higher amounts of closed canopy forest. Coastal areas get more rain and the eastern spots are drier due to rain shadow. 
-
-![Figure 12. Map of percent of historic late successional ecosystems that are classified as closed canopy. We used jenks natural breaks for the legend breaks.](assets/historicOldGrowth_closed.png){width=80%}
-
-## Estimated Percentage of **Current Late-Successional (open-canopy)**
-
-This map represents the percent of current, open canopy, late-successional forest. Darker purple areas indicate higher amounts of open canopy forest. Late-successional, open-canopy forest ranged from 1-28% and are indicated by darker purple areas on the map. Note: there is very little open-canopy ecosystem remaining.
-
-![Figure 13. Map of percent of current late successional ecosystems that are classified as open canopy. We used jenks natural breaks for the legend breaks.](assets/currentOldGrowth_open.png){width=80%}
-
-## Estimated Percentage of **Current Late-Successional (closed-canopy)**
-
-This map represents the percent of current, closed-canopy, late-successional forests. Darker red areas indicate higher amounts of closed-canopy forest. <<SHOULD THE LEGEND BREAKS BE DOUBLE CHECKED? I.E. LAST BREAK IS 32-84%?>> 
-
-![Figure 14. Map of percent of current late successional ecosystems that are classified as closed canopy. We used jenks natural breaks for the legend breaks.](assets/currentOldGrowth_closed.png){width=80%}
+![](assets/ref_cur_late_open.jpg){width=80%}
 
 
-## what is this title? I accidentally deleted it)
+## Reference and current closed-canopy late successional habitat
 
-This chart shows change in amounts of late-successional open and closed canopy habitat by ecosystem, from modeled historical to mapped using data from 2020. The y axis are the top LANDFIRE BpSs and the x axis displays the percent change from historical to present-day <<WOULDN'T SAY PRESENT DAY BECAUSE TIME N ALL...OR 2020??>>. The arrows/ecosystems are arranged in descending order from most prevalent to least (at the bottom). Yellow arrows indicate a loss, while the green ones represent a gain.
+This map represents the percent of reference (left) and current (right), closed-canopy, late-successional forests. Reference closed-canopy late-succession habitat ranged from 42-55% per BpS, and currently that amount ranges from 32-84% per BpS. 
 
-### Example interpretations:
+ 
+
+![](assets/ref_cur_late_closed.jpg){width=80%}
+
+
+
+## Estimated Changes in Late Successional Habitat, Reference to Current, Open and Closed 
+
+This chart shows change in amounts of late-successional open and closed canopy habitat by ecosystem, from modeled reference to mapped using data from 2020. The y axis are the top LANDFIRE BpSs and the x axis displays the percent change from reference to ca2020.  The arrows/ecosystems are arranged in descending order from most prevalent to least (at the bottom). Yellow arrows indicate a loss, while the green ones represent a gain.
+
+**Example interpretations:**
 1) North Pacific Maritime Mesic-Wet Douglas-fir Western Hemlock Forest experienced a ~73% decrease in closed-canopy and a ~5% decrease in open-canopy forest type.
 2) Mediterranean California Dry-Mesic Mixed Conifer Forest and Woodland experienced a ~23% increase in closed-canopy and a ~35% decrease in open-canopy forest type.
 
-```{r late-succession change, open and closed, message=FALSE, warning=FALSE, fig.width=9, fig.height=18}
+```{r late-succession change, open and closed, message=FALSE, warning=FALSE, echo=FALSE, fig.width=9, fig.height=9}
 
 ## old growth change split out by open/closed
 
 
 library(tidyverse)
-
-## read in data
-
-raw_data <- read.csv("data/final_df.csv")
 
 
 ## filter, group and add helper columns
@@ -226,7 +213,4 @@ canopy_arrow_plot
 ```
 
 
-
-
-Figure 15. Chart showing change in amounts of late-successional open and closed canopy habitat by ecosystem, from modeled historical to mapped 2020
 
