@@ -5,13 +5,13 @@ title: "Methods"
 
 ### Data inputs
 
-The [LANDFIRE](https://landfire.gov/) Program provides 25+ national geo-spatial layers (e.g. vegetation, fuel, disturbance, etc.), databases, and ecological models that are available to the public for the U.S. and insular areas.
+The [LANDFIRE](https://landfire.gov/){target='blank'} Program provides 25+ national geo-spatial layers (e.g. vegetation, fuel, disturbance, etc.), databases, and ecological models that are available to the public for the U.S. and insular areas.
 
 We relied on Three LANDFIRE Products as inputs for this initial analysis:
 
-1)  [Biophysical Settings (BpS) Models, Documents and Reference Condition tables](https://landfire.gov/bps-models.php): For estimating "reference" (historic) amounts of open- and closed late-succession classes.
-2)  [Biophysical Settings Spatial Data](https://landfire.gov/bps.php): Were used to map 'ecosystem footprints'. 
-3)  [Succession Class Spatial Data](https://landfire.gov/sclass.php): To create a map of current succession classes.  These are linked to the BpS products. 
+1)  [Biophysical Settings (BpS) Models, Documents and Reference Condition tables](https://landfire.gov/bps-models.php){target='blank'}: For estimating "reference" (historic) amounts of open- and closed late-succession classes.
+2)  [Biophysical Settings Spatial Data](https://landfire.gov/bps.php){target='blank'}: Were used to map 'ecosystem footprints'. 
+3)  [Succession Class Spatial Data](https://landfire.gov/sclass.php){target='blank'}: To create a map of current succession classes.  These are linked to the BpS products. 
 
 \*NOTE: LANDFIRE data is delivered as geotifs with 30M pixel size. All maps were created in ArcGIS Pro. All charts were plotted in R/R-Studio.
 
@@ -51,53 +51,53 @@ quickmap
 
 ```
 
-Figure 2. Study area is the western coast of Oregon along the western side of the coastal range of the Cascade Mountains. This area is also known in LANDFIRE as Map Zone 2.  See map of all LANDFIRE Map Zones [here](https://landfirereview.org/IMG/USmapzones-v1_July2015.jpg).
+Figure 2. Study area is the western coast of Oregon along the western side of the coastal range of the Cascade Mountains. This area is also known in LANDFIRE as Map Zone 2.  See map of all LANDFIRE Map Zones [here](https://landfirereview.org/IMG/USmapzones-v1_July2015.jpg){target='blank'}.
 
 
 Below we describe the data inputs and GIS operations.  
 
 ## GIS operations
 
-### Clipping ecosystem footprint Data - (from) LANDFIRE BpS**
+### Clipping ecosystem footprint data
 
-We relied on LANDFIRE's [Biophysical Settings (BpS)](https://landfire.gov/bps.php) to obtain "potential ecosystem footprints" to represent what would have been present prior to European colonization of North America. LANDFIRE's BpS suite is based on both the current biophysical environment and an approximation of the historical disturbance regime. 
+We relied on LANDFIRE's [Biophysical Settings (BpS)](https://landfire.gov/bps.php){target='blank'} to obtain "potential ecosystem footprints" to represent what would have been present prior to European colonization of North America. LANDFIRE's BpS suite is based on both the current biophysical environment and an approximation of the historical disturbance regime. 
 
 For example, each BpS, (i.e. "western hemlock douglas fir forest") is accompanied by a description that includes information on its succession classes and a model which captures historical disturbances and estimated amounts of succession classes.
 
-We used the [Clip Raster](https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/clip.htm) tool in ArcGIS pro to extract the area of interest from a broader extent of the raster data.  
+We used the [Clip Raster](https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/clip.htm){target='blank'} tool in ArcGIS pro to extract the area of interest from a broader extent of the raster data.  
 
 
 
-### Obtaining historical Percentages of Late-Successional Forests in Western Oregon - (from) LANDFIRE BpS**
+### Obtaining historical percentages of late-successional forests 
 
 
 For each BpS, we needed to get estimates how much late-open and late-closed forest would have historically been present. This information was developed in BpS state-and-transition models, and available in a couple formats:
 
-1. The BpS Reference Condition Table obtainable by clicking "Reference Conditions" [here](https://landfire.gov/bps-models.php).
-2. BpS description documents.  We downloaded them by filtering for Map Zone 2 at https://landfirereview.org/search.php.  
+1. The BpS Reference Condition Table obtainable by clicking "Reference Conditions" [here](https://landfire.gov/bps-models.php){target='blank'}.
+2. BpS description documents.  We downloaded them by filtering for Map Zone 2 at [https://landfirereview.org/search.php](https://landfirereview.org/search.php){target='blank'}.  
 
 
 **Example - Below is a screenshot of a BpS model:** 
 1. Boxes represent the succession classes, or structural stages of an ecosystem
 2. Lines represent succession and disturbance pathways
-3. What's missing from the diagram? The quantitative, disturbance inputs from the model, or the outputs which include percent of each succession class that would have occurred historically (visit the [LANDFIRE Vegetation Modeling site](https://thenatureconservancy.github.io/landfiremodels/) to learn more about the modeling process).
+3. What's missing from the diagram? The quantitative, disturbance inputs from the model, or the outputs which include percent of each succession class that would have occurred historically (visit the [LANDFIRE Vegetation Modeling site](https://thenatureconservancy.github.io/landfiremodels/){target='blank'} to learn more about the modeling process).
 
 
 ![](assets/bpsmodel.PNG)
 
 
 
-### **Assessing Current Succession Classes**
+### Assessing current succession classes
 
-We used the LANDFIRE [succession class dataset](https://landfire.gov/sclass.php) to estimate the percentage of each succession class that occurs (per BpS) on today's landscape. Each pixel within a BpS is labeled "A through E" for the "reference" states, and includes labels for other categories such as agriculture and urban. 
+We used the LANDFIRE [succession class dataset](https://landfire.gov/sclass.php){target='blank'} to estimate the percentage of each succession class that occurs (per BpS) on today's landscape. Each pixel within a BpS is labeled "A through E" for the "reference" states, and includes labels for other categories such as agriculture and urban. 
 
-**Step 1:** Use the ["clip raster"](https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/clip.htm) tool to extract the area of interest from a broader extent of the raster data. 
+**Step 1:** Use the ["clip raster"](https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/clip.htm){target='blank'} tool to extract the area of interest from a broader extent of the raster data. 
 
-**Step 2:** Do a 'combine' using the [Combine Tool](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/combine.htm) of the BpS and succession class data to get a dataframe with pixel counts of each unique combination of BpS and succession class to allow for estimating of the amounts of current succession classes per BpS.  
+**Step 2:** Do a 'combine' using the [Combine Tool](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/combine.htm){target='blank'} of the BpS and succession class data to get a dataframe with pixel counts of each unique combination of BpS and succession class to allow for estimating of the amounts of current succession classes per BpS.  
 
-**Step 3:** Use the [Join Field Tool](https://pro.arcgis.com/en/pro-app/3.1/tool-reference/data-management/join-field.htm) to join the 'BPS_NAME', 'BPS_MODEL' attributes from the BpS dataset, and the 'Label' attribute from the Succession Class dataset  (see output data example below).
+**Step 3:** Use the [Join Field Tool](https://pro.arcgis.com/en/pro-app/3.1/tool-reference/data-management/join-field.htm){target='blank'} to join the 'BPS_NAME', 'BPS_MODEL' attributes from the BpS dataset, and the 'Label' attribute from the Succession Class dataset  (see output data example below).
 
-The rules for defining the structural characteristics of each succession class are in the [BpS descriptions](https://www.landfire.gov/bps-models.php), and are essentially combinations of height, cover and type. 
+The rules for defining the structural characteristics of each succession class are in the [BpS descriptions](https://www.landfire.gov/bps-models.php){target='blank'}, and are essentially combinations of height, cover and type. 
 
 
 ### Wrangling data exported from ArcGIS Pro

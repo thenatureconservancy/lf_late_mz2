@@ -2,17 +2,6 @@
 title: "Discussion"
 ---
 
-
-## Caveats
-
-* This analysis was done to explore broad trends over time and should be used as a launch point for localized, in-depth analyses.
-* We were intentional in using the term 'late successional', as that is the language used by LANDFIRE in the [BpS models and descriptions](https://landfire.gov/bps-models.php).  This should not be mistaken as an 'old-growth' assessment.
-* Reference conditions were modeled by experts using a mix of expert opinion, local data and literature.  The amount of input information could vary from BpS to BpS.  For more information on the modeling methods, see [Blankenship et al., 2021](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecs2.3484).
-
-
-
-* Differentiation between open/closed canopy classes were determined in workshops led by local experts. <<DOCUMENTATION ON THEIR CRITERIA CAN BE FOUND HERE>>
-
 ## Discussion
 
 ### Summary and patterns
@@ -23,13 +12,26 @@ Overall, late-successional forests have declined from pre-European conditions to
 
 Our results demonstrate the importance of considering open canopy LS, especially in fire adapted ecosystems. If we only consider ‘closed-canopy’ late succession habitat, we may underestimate those areas. Consideration of both canopy types could lead to a fuller understanding of the ecosystems at hand, as well as increased forest resiliency and stronger and more inclusive management strategies moving forward.
 
+
+
+## Caveats
+
+* This analysis was done to explore broad trends over time and should be used as a launch point for localized, in-depth analyses.
+* We were intentional in using the term 'late successional', as that is the language used by LANDFIRE in the [BpS models and descriptions](https://landfire.gov/bps-models.php){target='blank'}.  In our interpretation this is a broad category that may or may not include more traditionally defined "old-growth" or "mature" forests.
+* Reference conditions were modeled by experts using a mix of expert opinion, local data and literature.  The amount of input information could vary from BpS to BpS.  For more information on the modeling methods, see [Blankenship et al., 2021](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecs2.3484){target='blank'}.
+
+
+
 ### Future directions
 
+This project was completed as an internship at [Northern Michigan University](https://nmu.edu/){target='blank'} over one semester using freely available data from LANDFIRE with no modifications.  We hope that this work is continued and suggest a few possible directions:
+
+* Try in other landscapes.  This landscape was interesting to us because it has amazing elevational changes and variation in ecosystems.  Repeating the work in the southeast is of particular interest due to the coastal and fire adapted ecosystems there.
+* As noted above 'late-succession' does not necessarily mean 'old-growth' or 'mature'.  Use other datasets to corroborate/winnow down (or add to) LANDFIRE late succession areas.  Specific parameters will depend on the ecosystem.  For example, coarse woody debris and hummock development might be a key indicator of mature forests in some places.
+* Review and refine late-succession class rules for local situations.  
 
 
-## Acknowledgements
 
-- LANDFIRE Team
-- The Conservation Data Lab (https://conservationdatalab.org/)
+
 
 

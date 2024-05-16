@@ -7,7 +7,7 @@ title: "Results"
 This chart represents the historical ecosystems of our area of interest, split out by estimated acres of the various succession classes, pre-European Settlement (referred to as 'Reference'). On the y axis are names of LANDFIRE’s BpSs and the x axis represent the number of acres. The colors represent the age classes; the purple and orange areas represent late-succession ecosystems. We mapped 28 BpSs within the area of interest. For the chart below excluded BpSs with footprints of less than 100,000 acres. Roughly 60% of the area is estimated to have been historically classified as late-successional habitat.
 
 
-```{r stacked bps, message=FALSE, echo=FALSE, warning=FALSE, fig.width=9, fig.height=10}
+```{r stacked bps, message=FALSE, warning=FALSE, fig.width=9, fig.height=10}
 
 library(tidyverse)
 library(scales)
@@ -67,9 +67,9 @@ plot_acres
 
 
 
-## Estimated Percentages of **Late-Succesional Habitat, Reference and Current**
+## Estimated Percentages of Late-Succesional Habitat, Reference and Current
 
-The map below represents the reference and current (ca2020) percentages of late-successional forest by ecosystem. In general there has been a substantial loss of late-successional habitat in this area. Loss is calculated per ecosystem, and the percent is the same across each ecosystem's footprint.  We did not map where late succession occured historically as it likely moved around so we cannot calculate change at a per pixel level.
+The map below represents the reference and current (ca2020) percentages of late-successional forest by ecosystem. In general there has been a substantial loss of late-successional habitat in this area. Loss is calculated per ecosystem, and the percent is the same across each ecosystem's footprint.  We did not map where late succession occurred historically as it likely moved around so we cannot calculate change at a per pixel level.
 
 
 ![](assets/ref_cur_late.jpg){width=80%}
@@ -81,7 +81,7 @@ This chart shows changes in amounts of late-successional habitat by ecosystem, r
 
 Here we present the same ecosystems as above, i.e., ones mapped with more than 100,000ac. 
 
-```{r late-succession change, message=FALSE, echo=FALSE, warning=FALSE, fig.width=9, fig.height=8}
+```{r late-succession change, message=FALSE, warning=FALSE, fig.width=9, fig.height=8}
 
 
 ## filter, group and add helper columns
@@ -153,7 +153,7 @@ This chart shows change in amounts of late-successional open and closed canopy h
 1) North Pacific Maritime Mesic-Wet Douglas-fir Western Hemlock Forest experienced a ~73% decrease in closed-canopy and a ~5% decrease in open-canopy forest type.
 2) Mediterranean California Dry-Mesic Mixed Conifer Forest and Woodland experienced a ~23% increase in closed-canopy and a ~35% decrease in open-canopy forest type.
 
-```{r late-succession change, open and closed, message=FALSE, warning=FALSE, echo=FALSE, fig.width=9, fig.height=9}
+```{r late-succession change, open and closed, message=FALSE, warning=FALSE, fig.width=9, fig.height=9}
 
 ## old growth change split out by open/closed
 
