@@ -3,12 +3,15 @@ title: "About"
 ---
 
 ## Mary Kelly
-Mary is a senior undergraduate student at Northern Michigan University (NMU), double-majoring in Environmental Science (natural resources emphasis) and French. Entering her final year of college, Mary leads two NMU student organizations, is an alumna of the NMU Student Leader Fellowship Program, and has interned in the federal government and non-profit conservation spaces. ![Mary Kelly](assets/Mary_HeadshotF23_Horizontal.jpg){style="float:right; margin-left: 5%; fig-align:right; width:50%;" fig-alt="\""} She is a member of the Conservation Data Lab (CDL). Mary's favorite part of the CDL is being part of a community of people who care for the well-being of the environment. After graduating with her Bachelor's of Science degree in May 2024, Mary hopes to attend graduate school for a Master’s degree or start working full-time.
+![Mary Kelly](assets/Mary_HeadshotF23_Horizontal.jpg){style="float:right; margin-left: 5%; fig-align:right; width:40%;" fig-alt="\""} Mary is a senior undergraduate student at Northern Michigan University (NMU), double-majoring in Environmental Science (natural resources emphasis) and French. Entering her final year of college, Mary leads two NMU student organizations, is an alumna of the NMU Student Leader Fellowship Program, and has interned in the federal government and non-profit conservation spaces.  She is a member of the Conservation Data Lab (CDL). Mary's favorite part of the CDL is being part of a community of people who care for the well-being of the environment. After graduating with her Bachelor's of Science degree in May 2024, Mary hopes to attend graduate school for a Master’s degree or start working full-time.
+
+<br>
 
 
 ## Randy Swaty
-Randy is conservation ecologist with 20+ years’ experience working at scales from microbes to landscapes.  He uses the best available scientific information combined with strong communication skills to inform decision-makers, influence policy, plan sustainable land management, and increase collaboration.  ![Randy Swaty](assets/Swaty.JPEG){style="float:right; margin-left: 5%; fig-align:right; width:50%;" fig-alt="\""} In addition to his full-time position as an ecologist with [The Nature Conservancy's LANDFIRE Team](https://storymaps.arcgis.com/stories/f37983671094430ebd23035596deccb6){target='blank'} Randy founded and co-leads the [Conservation Data Lab](https://conservationdatalab.org/){target='blank'}. 
+![Randy Swaty](assets/Swaty.JPEG){style="float:right; margin-left: 5%; fig-align:right; width:30%;" fig-alt="\""} Randy is conservation ecologist with 20+ years’ experience working at scales from microbes to landscapes.  He uses the best available scientific information combined with strong communication skills to inform decision-makers, influence policy, plan sustainable land management, and increase collaboration.  In addition to his full-time position as an ecologist with [The Nature Conservancy's LANDFIRE Team](https://storymaps.arcgis.com/stories/f37983671094430ebd23035596deccb6){target='blank'} Randy founded and co-leads the [Conservation Data Lab](https://conservationdatalab.org/){target='blank'}. 
 
+<br>
 
 
 
@@ -48,5 +51,6 @@ On the Methods page we mentioned several concepts.  Below are some supporting re
 
 ## Acknowledgements
 
-- LANDFIRE Team
-- The Conservation Data Lab (https://conservationdatalab.org/)
+- [LANDFIRE](https://landfire.gov/){target='blank'}
+- [The Nature Conservancy's LANDFIRE team](https://storymaps.arcgis.com/stories/f37983671094430ebd23035596deccb6){target='blank'}
+- [The Conservation Data Lab](https://conservationdatalab.org/)
