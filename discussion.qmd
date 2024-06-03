@@ -17,7 +17,7 @@ Our results demonstrate the importance of considering open canopy LS, especially
 ## Caveats
 
 * This analysis was done to explore broad trends over time and should be used as a launch point for localized, in-depth analyses.
-* We were intentional in using the term 'late successional', as that is the language used by LANDFIRE in the [BpS models and descriptions](https://landfire.gov/bps-models.php){target='blank'}.  In our interpretation this is a broad category that may or may not include more traditionally defined "old-growth" or "mature" forests.
+* We were intentional in using the term 'late successional', as that is the language used by LANDFIRE in the [BpS models and descriptions](https://landfire.gov/vegetation/bps-models){target='blank'}.  In our interpretation this is a broad category that may or may not include more traditionally defined "old-growth" or "mature" forests.
 * Reference conditions were modeled by experts using a mix of expert opinion, local data and literature.  The amount of input information could vary from BpS to BpS.  For more information on the modeling methods, see [Blankenship et al., 2021](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecs2.3484){target='blank'}.
 
 
